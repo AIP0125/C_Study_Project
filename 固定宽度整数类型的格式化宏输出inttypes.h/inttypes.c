@@ -8,6 +8,9 @@ int main() {
 	int32_t secondNumber = INT32_MAX;
 	uint64_t thirdNumber = UINT64_MAX;
 
+	int_least8_t minNumber = 102;//least至少有多少字节，可扩展
+	int_fast8_t fastNumber = 20;//在至少8字节的条件下，提供最小的空间达到最快的运行速度
+	
 	printf("int8_t : %" PRId8 "\n", firstNumber);
 	printf("int8_t : %" PRId32 "\n", secondNumber);
 	printf("int8_t : %" PRIu64 "\n", thirdNumber);
