@@ -1,0 +1,3 @@
+Hi
+This is the second line of the written text filetry use fprintf:2 
+ Looks like it worked!!!
