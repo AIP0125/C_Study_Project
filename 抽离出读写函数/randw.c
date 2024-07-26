@@ -19,18 +19,18 @@ int main() {
 	errno_t result = update_log(file_name, search_str, replace_str);
 	if (result == 0) {
 		printf("updata log successfully!");
+		return 0;
 	}
 	else
 	{
 		char error_msg[256] = { 0 };
 		strerror_s(error_msg, sizeof(error_msg), result);
 		fprintf_s(stderr, "failed updata error :%s", error_msg);
-
-		//关闭所有的流
-		int file_stream_close = _fcloseall();
-		printf("\nNumber of files closed by _fcloseall:%u\n", file_stream_close);
-		return 0;
 	}
+	//关闭所有的流
+	int file_stream_close = _fcloseall();
+	printf("\nNumber of files closed by _fcloseall:%u\n", file_stream_close);
+	return 0;
 }
 	/**
 	*读取文件所有内容
