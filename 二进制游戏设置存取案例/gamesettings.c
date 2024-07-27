@@ -18,18 +18,18 @@ typedef struct GameSettings{
 	enum GameDifficulty difficulty;
 
 }GameSettings;
-//读取设置声明
+//读取设置函数声明
 void loaded_game_settings(const GameSettings* settings,const char* file_name);
-//
+//更改设置函数声明
 void save_game_settings(const GameSettings* settings, const char* file_name);
 
 int main() {
-	GameSettings settings = { 0.33,1920,1080,GENERAL};
+	GameSettings settings = { 0.33,1920,1080,GENERAL};//设置内容
 	save_game_settings(&settings, "C:\\Users\\AIP01\\Desktop\\GameSettings.bin");
-	GameSettings loaded_settings;
+	GameSettings loaded_settings;//用来接收读取设置的结构体
 	loaded_game_settings(&loaded_settings, "C:\\Users\\AIP01\\Desktop\\GameSettings.bin");
 	
-	printf("volume:%0.2f\nresolution ratio: %d x %d\ngame difficulty:%d",
+	printf("volume:%0.2f\nresolution ratio: %d x %d\ngame difficulty:%d",//输出
 		loaded_settings.volume, 
 		loaded_settings.x, 
 		loaded_settings.y, 
